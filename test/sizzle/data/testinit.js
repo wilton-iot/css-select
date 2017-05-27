@@ -1,9 +1,9 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 var assert = require("assert"),
     util = require("util"),
-    helper = require("../../tools/helper.js"),
+    helper = require("css-select/test/tools/helper.js"),
     CSSselect = helper.CSSselect,
-    path = require("path"),
-    docPath = path.join(__dirname, "index.html"),
+    docPath = "sizzle/data/index.html",
     document = null;
 
 
@@ -57,12 +57,25 @@ function t( a, b, c ) {
 	var f = CSSselect(b, document),
 		s = "",
 		i = 0;
-
+        
 	for ( ; i < f.length; i++ ) {
 		s += ( s && "," ) + '"' + f[ i ].id + '"';
 	}
-
-	deepEqual(f, q.apply( q, c ), a + " (" + b + ")");
+        function getId(n) {
+            return n && n.attribs.id;
+        }
+        function compId(first, second) {
+            var fid = getId(first);
+            var sid = getId(second);
+            if (fid === sid) {
+                return 0;
+            }
+            return fid > sid ? 1 : -1;
+        }
+        f.sort(compId);
+        var cw = q.apply(q, c);
+        cw.sort(compId);
+	deepEqual(f, cw, a + " (" + b + ")");
 }
 
 /**
@@ -78,10 +91,12 @@ function url( value ) {
 	return value + (/\?/.test(value) ? "&" : "?") + new Date().getTime() + "" + parseInt(Math.random()*100000);
 }
 
-var xmlDoc = helper.getDOMFromPath(path.join(__dirname, "fries.xml"), { xmlMode: true });
+var xmlDoc = helper.getDOMFromPath("sizzle/data/fries.xml", { xmlMode: true });
 var filtered = xmlDoc.filter(function(t){return t.type === "tag"});
 xmlDoc.lastChild = filtered[filtered.length - 1];
 
 function createWithFriesXML() {
 	return xmlDoc;
 }
+
+return module.exports;});

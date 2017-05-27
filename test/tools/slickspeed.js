@@ -1,4 +1,5 @@
-var helper = require("./helper.js"),
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+var helper = require("css-select/helper.js"),
 	doc = helper.getFile("W3C_Selectors.html"),
 	CSSselect = helper.CSSselect,
 	soupselect = require("cheerio-soupselect"),
@@ -74,3 +75,5 @@ selectors.forEach(testSpeed);
 function print(){
 	process.stdout.write(Array.prototype.join.call(arguments, " "));
 }
+
+return module.exports;});

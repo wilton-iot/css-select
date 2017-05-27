@@ -1,10 +1,9 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 "use strict";
 
-var expect = require("expect.js"),
-    DomUtils = require("htmlparser2").DomUtils,
-	helper = require("../tools/helper.js"),
-	path = require("path"),
-	document = helper.getDocument(path.join(__dirname, "index.html")),
+var DomUtils = require("htmlparser2").DomUtils,
+	helper = require("css-select/test/tools/helper.js"),
+	document = helper.getDocument("qwery/index.html"),
 	CSSselect = helper.CSSselect;
 
 var location = {hash: ""};
@@ -547,3 +546,5 @@ module.exports = {
 }
 
 };
+
+return module.exports;});

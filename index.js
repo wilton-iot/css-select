@@ -1,15 +1,16 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 "use strict";
 
 module.exports = CSSselect;
 
-var Pseudos       = require("./lib/pseudos.js"),
+var Pseudos       = require("css-select/lib/pseudos.js"),
     DomUtils      = require("domutils"),
     findOne       = DomUtils.findOne,
     findAll       = DomUtils.findAll,
     getChildren   = DomUtils.getChildren,
     removeSubsets = DomUtils.removeSubsets,
     falseFunc     = require("boolbase").falseFunc,
-    compile       = require("./lib/compile.js"),
+    compile       = require("css-select/lib/compile.js"),
     compileUnsafe = compile.compileUnsafe,
     compileToken  = compile.compileToken;
 
@@ -57,3 +58,5 @@ CSSselect.iterate = selectAll;
 //hooks
 CSSselect._compileUnsafe = compileUnsafe;
 CSSselect._compileToken = compileToken;
+
+return module.exports;});

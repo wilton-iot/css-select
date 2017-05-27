@@ -1,17 +1,19 @@
-var fs = require("fs"),
-    path = require("path"),
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+var fs = require("wilton/fs"),
     htmlparser2 = require("htmlparser2"),
     DomUtils = htmlparser2.DomUtils,
-    CSSselect = require("../../");
+    CSSselect = require("css-select/");
 
+// TODO: fixme 
+var basePath = "../test/js/modules/css-select/test/";
 function getDOMFromPath(path, options){
-	return htmlparser2.parseDOM(fs.readFileSync(path).toString(), options);
+	return htmlparser2.parseDOM(fs.readFile({path: basePath + path}), options);
 }
 
 module.exports = {
 	CSSselect: CSSselect,
 	getFile: function(name, options){
-		return getDOMFromPath(path.join(__dirname, "docs", name), options);
+		return getDOMFromPath(name, options);
 	},
 	getDOMFromPath: getDOMFromPath,
 	getDOM: htmlparser2.parseDOM,
@@ -49,3 +51,5 @@ module.exports = {
 		return document;
 	}
 };
+
+return module.exports;});

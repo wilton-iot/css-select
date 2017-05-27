@@ -1,4 +1,5 @@
-var CSSselect = require("../"),
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+var CSSselect = require("css-select/"),
     makeDom = require("htmlparser2").parseDOM,
     assert = require("assert");
 
@@ -84,3 +85,5 @@ describe("icontains", function(){
 
     });
 });
+
+return module.exports;});

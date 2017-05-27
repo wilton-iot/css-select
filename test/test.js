@@ -1,15 +1,16 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 describe("nwmatcher", function(){
-	require("./nwmatcher/");
+	require("css-select/test/nwmatcher/");
 });
 
 describe("sizzle", function(){
 	describe("selector", function(){
-		require("./sizzle/selector");
+		require("css-select/test/sizzle/selector");
 	});
 });
 
 describe("qwery", function(){
-	exportsRun(require("./qwery/"));
+	exportsRun(require("css-select/test/qwery/"));
 });
 
 function exportsRun(mod){
@@ -20,3 +21,5 @@ function exportsRun(mod){
 		else it(name, mod[name]);
 	});
 }
+
+return module.exports;});
