@@ -3,6 +3,9 @@ define(function(){var require = WILTON_requiresync;var module = {exports: {}};va
 	taken from https://github.com/dperini/nwmatcher/blob/master/test/scotch/test.js
 */
 
+var test = require("tape-compat");
+var describe = test.describe;
+var it = test.it;
 var DomUtils = require("htmlparser2").DomUtils,
 	helper = require("css-select/test/tools/helper.js"),
 	assert = require("assert"),

@@ -1,4 +1,7 @@
 define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+var test = require("tape-compat");
+var describe = test.describe;
+var it = test.it;
 var DomUtils = require("domutils"),
 	helper = require("css-select/test/tools/helper.js"),
 	CSSselect = helper.CSSselect,

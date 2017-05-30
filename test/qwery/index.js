@@ -1,6 +1,8 @@
 define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 "use strict";
 
+var test = require("tape-compat");
+var expect = test.expect;
 var DomUtils = require("htmlparser2").DomUtils,
 	helper = require("css-select/test/tools/helper.js"),
 	document = helper.getDocument("qwery/index.html"),
