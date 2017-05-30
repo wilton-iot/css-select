@@ -5,7 +5,7 @@ var fs = require("wilton/fs"),
     CSSselect = require("css-select/");
 
 // TODO: fixme 
-var basePath = "../test/js/modules/css-select/test/";
+var basePath = "/home/alex/projects/wilton/wilton_modules/css-select/test/";
 function getDOMFromPath(path, options){
 	return htmlparser2.parseDOM(fs.readFile({path: basePath + path}), options);
 }
