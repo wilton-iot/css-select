@@ -1,10 +1,11 @@
 define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 var fs = require("wilton/fs"),
+    misc = require("wilton/misc"),
     htmlparser2 = require("htmlparser2"),
     DomUtils = htmlparser2.DomUtils,
     CSSselect = require("css-select/");
 
-var basePath = WILTON_MODULES_DIRECTORY + "/css-select/test/";
+var basePath = misc.getWiltonConfig().requireJsConfig.baseUrl + "/css-select/test/";
 function getDOMFromPath(path, options){
 	return htmlparser2.parseDOM(fs.readFile({path: basePath + path}), options);
 }
