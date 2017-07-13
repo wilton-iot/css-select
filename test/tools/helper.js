@@ -5,7 +5,7 @@ var fs = require("wilton/fs"),
     DomUtils = htmlparser2.DomUtils,
     CSSselect = require("css-select/");
 
-var basePath = misc.getWiltonConfig().requireJsConfig.baseUrl + "/css-select/test/";
+var basePath = misc.getModulePath("css-select/test/");
 function getDOMFromPath(path, options){
 	return htmlparser2.parseDOM(fs.readFile({path: basePath + path}), options);
 }
