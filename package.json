@@ -57,5 +57,11 @@
       "describe": true,
       "it": true
     }
+  },
+  "wilton": {
+    "excludes": [
+      "test",
+      "browser_functions.js"
+    ]
   }
 }
