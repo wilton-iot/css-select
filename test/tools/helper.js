@@ -1,11 +1,11 @@
 define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
-var fs = require("wilton/fs"),
+var loader = require("wilton/loader"),
     htmlparser2 = require("htmlparser2"),
     DomUtils = htmlparser2.DomUtils,
     CSSselect = require("css-select/");
 
 function getDOMFromPath(path, options){
-	return htmlparser2.parseDOM(fs.readModuleResource("css-select/test/" + path), options);
+	return htmlparser2.parseDOM(loader.loadModuleResource("css-select/test/" + path), options);
 }
 
 module.exports = {
