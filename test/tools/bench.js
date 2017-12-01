@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 var ben = require("ben"),
 	testString = "doo, *#foo > elem.bar[class$=bAz i]:not([ id *= \"2\" ]):nth-child(2n)",
 	helper = require("css-select/helper.js"),
@@ -10,4 +10,4 @@ var ben = require("ben"),
 var compiled = compile(testString);
 console.log("Executing took:", ben(1e6, function(){CSSselect(compiled, dom);})*1e3);
 
-return module.exports;});
+require = requireOrig;});

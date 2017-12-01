@@ -1,8 +1,8 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 var test = require("tape-compat");
 var describe = test.describe;
 var it = test.it;    
-var CSSselect = require("css-select/"),
+var CSSselect = require("css-select"),
     makeDom = require("htmlparser2").parseDOM,
     assert = require("assert");
 
@@ -89,4 +89,4 @@ describe("icontains", function(){
     });
 });
 
-return module.exports;});
+require = requireOrig;});

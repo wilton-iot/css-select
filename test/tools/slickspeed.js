@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 var helper = require("css-select/helper.js"),
 	doc = helper.getFile("W3C_Selectors.html"),
 	CSSselect = helper.CSSselect,
@@ -76,4 +76,4 @@ function print(){
 	process.stdout.write(Array.prototype.join.call(arguments, " "));
 }
 
-return module.exports;});
+require = requireOrig;});

@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 /*
 	taken from https://github.com/dperini/nwmatcher/blob/master/test/scotch/test.js
 */
@@ -469,4 +469,4 @@ var RUN_BENCHMARKS = false;
 	});
 }(runner));
 
-return module.exports;});
+require = requireOrig;});
